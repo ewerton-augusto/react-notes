@@ -2,7 +2,7 @@
 
 Aplicação web criada com a biblioteca React para criação de notas.
 
-![Capa do Projeto](/_docs/react-notes.jpg)
+![Capa do Projeto](/_docs/react-notes.JPG)
 
 ## Dependências
 
