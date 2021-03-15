@@ -1,0 +1,102 @@
+.section-cadastro-nota{
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 350px;
+    max-height: 720px;
+    border: 2px solid #838383;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.section-cadastro-nota_header{    
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 25px 25px 50px 50px;
+}
+
+.section-cadastro-nota__h1{
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #222;
+    padding: 0.7em 0;
+}
+
+.section-cadastro-nota__img{
+    width: 100%;
+    max-width: 200px;
+}
+
+.form-cadastro-nota__form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+}
+
+.form-cadastro-nota__label{
+    margin: 0.5rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.form-cadastro-nota__input,
+.form-cadastro-nota__textarea{
+    margin: 0.5rem 0;
+    padding: 1em;
+    border: 1px solid #838383;
+}
+
+.form-cadastro-nota__input{
+    border-radius: 25px;
+}
+
+.form-cadastro-nota__textarea{
+    border-radius: 10px;
+}
+
+.form-cadastro-nota__input:focus,
+.form-cadastro-nota__textarea:focus{
+    outline: 0;
+    box-shadow: 0 0 1px 1px var(--secondary-bg-color);
+}
+
+.form-cadastro-nota__button{
+    color: #222;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #838383;
+    border-radius: 25px;
+    background-color: var(--secondary-bg-color);
+
+    transition: all .2s ease-in-out;
+}
+
+.form-cadastro-nota__button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.03);
+}
+
+.form-cadastro-nota__button:focus{
+    outline: 0;
+}
+
+@media (max-width: 450px){
+    .section-cadastro-nota{
+        border: none;
+    }
+
+    .section-cadastro-nota_header{
+        border-radius: 0 0 25px 25px;
+    }
+
+    .form-cadastro-nota__form{
+        padding: 0 0 1em;
+        margin: 0 0.5em;
+        border-bottom: 1px solid #838383;
+    }
+}

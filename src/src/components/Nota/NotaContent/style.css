@@ -1,0 +1,10 @@
+.nota-content__header{
+    background-color: var(--secondary-bg-color);
+    padding: 1em 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.nota-content__p{
+    padding: 1em 0.5em;
+}
