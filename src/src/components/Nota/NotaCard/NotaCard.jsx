@@ -3,16 +3,40 @@ import NotaContent from '../NotaContent/';
 import './style.css';
 
 class NotaCard extends Component {
+
+  constructor(){
+    super();
+    this.state = {notas:[]};
+    this._novasNotas = this._novasNotas.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.notas.inscrever(this._novasNotas);
+  }
+
+  componentWillUnmount(){
+    this.props.notas.desinscrever(this._novasNotas);
+  }
+
+  _novasNotas(notas){
+    this.setState({...this.notas, notas})
+  }
+
   render() {
     return (
       <div className="nota-card__div">
-        <h1 className="nota-card__title">Lista de Notas:</h1>
         <ul className="nota-card">
           {
-            this.props.notas.map((nota, index) => {
+            this.state.notas.map((nota, index) => {
               return (
                 <li className="nota-card__item" key={index}>
-                  <NotaContent titulo={nota.titulo} conteudo={nota.conteudo} />
+                  <NotaContent 
+                  indice={index}
+                  titulo={nota.titulo} 
+                  conteudo={nota.conteudo}
+                  categoria={nota.categoria}
+                  deletarNota={this.props.deletarNota}
+                  />
                 </li>
               );
             })

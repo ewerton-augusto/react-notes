@@ -1,8 +1,13 @@
 .nota-content__header{
     background-color: var(--secondary-bg-color);
-    padding: 1em 0;
-    text-align: center;
+    padding: 1em 0.5em;
     font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nota-content__delete:hover{
+    opacity: 0.7;
 }
 
 .nota-content__p{

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import Logo from './logo.svg';
+import Logo from '../../assets/img/logo.svg';
 
 class FormCadastroNota extends Component {
 
@@ -8,6 +8,25 @@ class FormCadastroNota extends Component {
     super(props);
     this.titulo = "";
     this.conteudo = "";
+    this.state = {categorias:[]};
+    this._novasCategorias = this._novasCategorias.bind(this);
+  }
+  
+  componentDidMount(){
+    this.props.categorias.inscrever(this._novasCategorias);
+  }
+
+  componentWillUnmount(){
+    this.props.categorias.desinscrever(this._novasCategorias);
+  }
+
+  _novasCategorias(categorias){
+    this.setState({...this.categorias, categorias});
+  }
+
+  _handleCategoria = (event) => {
+    event.stopPropagation();
+    this.categoria = event.target.value;
   }
 
   _handleMudarTitulo = (event) => {
@@ -23,7 +42,8 @@ class FormCadastroNota extends Component {
   _criarNota = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    this.props.criarNota(this.titulo, this.conteudo);
+
+    this.props.criarNota(this.titulo, this.conteudo, this.categoria);
 
     const inputTitulo = document.getElementById('input-title');
     const inputConteudo = document.getElementById('input-content');
@@ -35,14 +55,24 @@ class FormCadastroNota extends Component {
 
   render() {
     return (
-      <section className="section-cadastro-nota">
-        <div className="section-cadastro-nota_header">
-          <img className="section-cadastro-nota__img" src={Logo} alt="Logo React Notes" />
-          <h1 className="section-cadastro-nota__h1">React Notes</h1>
+      <section className="cadastro-nota">
+        <div className="cadastro-nota_header">
+          <img className="cadastro-nota__img" src={Logo} alt="Logo React Notes" />
+          <h1 className="cadastro-nota__h1">React Notes</h1>
         </div>
         <form className="form-cadastro-nota__form"
           onSubmit={this._criarNota}
-        >
+        > 
+          <label htmlFor="input-category" className="form-cadastro-nota__label"> Categoria </label>
+          <select 
+          id="input-category" 
+          className="form-cadastro-nota__input"
+          onChange={this._handleCategoria}>
+            <option>Sem Categoria</option>
+            {this.state.categorias.map((categoria, index) => {
+              return <option key={index}>{categoria}</option>
+            })}
+          </select>
           <label htmlFor="input-title" className="form-cadastro-nota__label"> Título </label>
           <input
             id="input-title"

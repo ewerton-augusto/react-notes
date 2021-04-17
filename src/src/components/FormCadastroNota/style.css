@@ -1,13 +1,13 @@
-.section-cadastro-nota{
+.cadastro-nota{
     margin: 1rem 0;
     width: 100%;
     max-width: 350px;
-    max-height: 720px;
+    max-height: 760px;
     border: 2px solid #838383;
     border-radius: 25px 25px 25px 25px;
 }
 
-.section-cadastro-nota_header{    
+.cadastro-nota_header{    
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     border-radius: 25px 25px 50px 50px;
 }
 
-.section-cadastro-nota__h1{
+.cadastro-nota__h1{
     font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -24,9 +24,9 @@
     padding: 0.7em 0;
 }
 
-.section-cadastro-nota__img{
+.cadastro-nota__img{
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .form-cadastro-nota__form{
@@ -86,11 +86,11 @@
 }
 
 @media (max-width: 450px){
-    .section-cadastro-nota{
+    .cadastro-nota{
         border: none;
     }
 
-    .section-cadastro-nota_header{
+    .cadastro-nota_header{
         border-radius: 0 0 25px 25px;
     }
 
